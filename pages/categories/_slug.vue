@@ -36,6 +36,7 @@
         >
           {{ category.name }}
         </h1>
+        <!-- eslint-disable vue/no-v-html -->
         <div
           class="mx-auto max-w-128 text-lg"
           :class="{
@@ -44,6 +45,7 @@
           }"
           v-html="category.description"
         />
+        <!--eslint-enable-->
       </div>
     </section>
 

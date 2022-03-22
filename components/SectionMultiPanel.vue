@@ -10,11 +10,10 @@
     <div
       v-for="(panel, index) in panels"
       :key="id + 'multiPanel' + index"
-      class="relative min-h-72 w-full md:w-1/2 lg:min-h-96"
+      class="relative min-h-96 max-h-96 w-full md:w-1/4 bg-primary-darker"
       :class="[
-        `bg-${bgColor}`,
         {
-          'px-6 py-20 md:px-12 md:py-16 lg:px-26 lg:py-32':
+          'px-6 py-16':
             panel.type === 'text' && panel.heading,
           'text-left': textAlign === 'left',
           'text-right': textAlign === 'right',
@@ -43,30 +42,32 @@
           <VisualMedia
             :source="panel.image"
             :is-background="true"
-            sizes="(min-width: 768px) 50vw, 100vw"
+            sizes="(min-width: 768px) 25vw, 100vw"
           />
         </BaseLink>
         <VisualMedia
           v-else
           :source="panel.image"
           :is-background="true"
-          sizes="(min-width: 768px) 50vw, 100vw"
+          sizes="(min-width: 768px) 25vw, 100vw"
         />
         <!-- TODO Fixed aspect ratio + background behavior? -->
       </template>
       <!-- Text panel -->
       <template v-else-if="panel.type === 'text'">
-        <h2>{{ panel.heading }}</h2>
+        <h2 class="text-primary-lightest">{{ panel.heading }}</h2>
+        <!-- eslint-disable vue/no-v-html -->
         <div
           v-balance-text.children
-          class="mt-4 whitespace-pre-line"
+          class="mt-4 whitespace-pre-line text-primary-lighter"
           v-html="panel.description"
         />
+        <!--eslint-enable-->
         <div :class="{ '-ml-3': panel.textAlign !== 'center' }">
           <div
             v-for="(link, i) in panel.links"
             :key="`link-${i}`"
-            :class="{ 'inline-block': panel.links.length < 3 }"
+            :class="{ 'inline-block': panel.links.length < 4 }"
           >
             <BaseButton
               class="mx-3 mt-6 inline-block"
@@ -105,7 +106,7 @@ export default {
     },
     bgColor: {
       type: String,
-      default: 'primary-lightest',
+      default: 'primary-darkest',
     },
   },
 }

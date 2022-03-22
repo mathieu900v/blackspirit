@@ -28,12 +28,14 @@
       <h2 v-if="heading" class="mb-3 text-3xl md:text-4xl lg:text-6xl">
         {{ heading }}
       </h2>
+      <!-- eslint-disable vue/no-v-html -->
       <div
         v-if="description"
         v-balance-text.children
         class="mb-6"
         v-html="description"
       ></div>
+      <!--eslint-enable-->
       <EmailSignupForm
         :class="{ 'mx-auto': textAlign === 'center' }"
         class="max-w-96"

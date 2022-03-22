@@ -27,7 +27,9 @@
               {{ store.supportEmail }}
             </a>
           </p>
+          <!-- eslint-disable vue/no-v-html -->
           <div class="mt-2" v-html="footer.contactInfoText" />
+          <!--eslint-enable-->
         </div>
 
         <!-- Social links-->
@@ -98,7 +100,9 @@
           <p v-if="footer.emailSignupHeading" class="mb-5 text-sm">
             {{ footer.emailSignupHeading }}
           </p>
+          <!-- eslint-disable vue/no-v-html -->
           <div v-if="footer.emailSignupText" v-html="footer.emailSignupText" />
+          <!--eslint-enable-->
           <EmailSignupForm
             :theme="background === 'dark' ? 'dark' : 'light'"
             class="mt-5"
@@ -119,13 +123,13 @@
       <div class="lg:flex-no-wrap container lg:flex lg:justify-between">
         <!-- Copyright & Settings -->
         <p class="my-3 text-sm">
-          <span>©{{ currentYear }} {{ store.name }}.</span> Powered by
+          <span>©{{ currentYear }} {{ store.name }}.</span> Réalisé par 
           <a
-            id="powered-by-swell"
+            id="par Mathieu Voyer"
             href="https://www.swell.is/"
-            title="Headless ecommerce platform for brands"
+            title="Developpeur Web"
             class="text-current"
-            >Swell</a
+            >Mathieu Voyer</a
           >
         </p>
         <!-- Secondary nav menu -->

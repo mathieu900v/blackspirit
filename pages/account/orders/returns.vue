@@ -18,7 +18,9 @@
       <h1 class="text-2xl">
         {{ $t('account.orders.returns.title') }}
       </h1>
+      <!-- eslint-disable vue/no-v-html -->
       <p class="text-sm" v-html="$t('account.orders.returns.infoText')" />
+      <!--eslint-enable-->
     </div>
 
     <BaseButton

@@ -13,7 +13,7 @@
           :style="{ height: header.logoHeight + 'px' }"
           class="block"
         />
-        <span v-else class="text-3xl sm:text-4xl">|</span>
+        <span v-else class="text-3xl sm:text-4xl text-primary-lightest">|</span>
       </div>
     </div>
 
@@ -25,11 +25,11 @@
     />
 
     <!-- Main header -->
-    <div class="fixed top-0 z-40 w-full">
+    <div class="fixed top-0 z-40 w-full bg-primary-dark">
       <div
         class="fixed w-full translate-y-0 transform transition-all duration-200 ease-in-out"
         :class="[
-          'bg-primary-lightest',
+          'bg-primary-darkest',
           { '-translate-y-full transform': header.hideOnScroll && hideHeader },
         ]"
       >
@@ -47,10 +47,10 @@
             :hidden="header.hideOnScroll && hideHeader"
           />
           <div
-            class="container relative z-20 flex items-stretch justify-between"
+            class="container relative z-20 flex items-stretch justify-evenly"
           >
             <!-- Logo -->
-            <div class="py-3 lg:w-1/4">
+            <div class="py-3 lg:w-1/2">
               <NuxtLink :to="localePath(resolveUrl({ type: 'home' }))">
                 <img
                   v-if="logoSrc"
@@ -68,7 +68,7 @@
 
             <!-- Main nav menu -->
             <nav v-if="menu" class="hidden w-full lg:flex lg:w-auto">
-              <ul class="flex justify-center">
+              <ul class="flex justify-center text-primary-lightest">
                 <li
                   v-for="(item, index) in menu.items"
                   :key="item.name"
@@ -115,7 +115,7 @@
             <!-- END Main nav menu -->
 
             <!-- Action menu -->
-            <div class="-mr-2 flex flex-row items-center justify-end lg:w-1/4">
+            <div class="-mr-2 flex flex-row items-center justify-end lg:w-1/4 text-primary-lightest">
               <!-- Locale select -->
               <LocaleSelect
                 v-if="$i18n.locales.length > 1"
@@ -180,7 +180,7 @@
                 :aria-label="$t('navigation.menu')"
                 @click="setMobileNavVisibility"
               >
-                <span class="center-xy absolute h-6 w-6">
+                <span class="center-xy absolute h-6 w-6 text-primary-lightest">
                   <span class="hamburger-inner"></span>
                 </span>
               </button>

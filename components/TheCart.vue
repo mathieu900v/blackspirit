@@ -24,11 +24,13 @@
               </button>
             </div>
 
+            <!-- eslint-disable vue/no-v-html -->
             <div
               v-if="$te('cart.infoText')"
               class="mt-4 text-sm"
               v-html="$t('cart.infoText')"
             />
+            <!--eslint-enable-->
           </div>
 
           <!-- Items -->

@@ -15,7 +15,9 @@
       <h2 class="mx-auto max-w-160 px-4">
         {{ heading }}
       </h2>
+      <!-- eslint-disable vue/no-v-html -->
       <div v-if="description" v-balance-text.children v-html="description" />
+      <!--eslint-enable-->
       <div v-if="image" class="relative xl:mx-12">
         <BaseLink v-if="url" :link="url">
           <VisualMedia

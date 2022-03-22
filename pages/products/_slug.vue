@@ -129,7 +129,9 @@
                 }}
               </span>
             </div>
+            <!-- eslint-disable vue/no-v-html -->
             <div class="markdown" v-html="product.description" />
+            <!--eslint-enable-->
 
             <!-- Bundle items -->
             <template v-if="bundleItems">

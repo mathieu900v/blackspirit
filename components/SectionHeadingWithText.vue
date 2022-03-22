@@ -25,6 +25,7 @@
         </h2>
       </div>
 
+      <!-- eslint-disable vue/no-v-html -->
       <div
         v-if="description"
         :class="{
@@ -39,6 +40,7 @@
         class="lg:text-lg"
         v-html="description"
       />
+      <!--eslint-enable-->
     </div>
   </section>
 </template>

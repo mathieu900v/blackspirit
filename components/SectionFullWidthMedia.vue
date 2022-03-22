@@ -80,12 +80,14 @@
           </h2>
           <!-- Tell prettier not to add extra whitespace -->
           <!-- display: inline -->
+          <!-- eslint-disable vue/no-v-html -->
           <p
             :class="{ 'text-primary-lighter': textColor === 'light' }"
             class="whitespace-pre-line"
             v-html="description"
           >
           </p>
+          <!--eslint-enable-->
           <div class="mx-3 mt-6" :class="{ '-ml-3': alignX !== 'center' }">
             <BaseButton
               v-for="(link, index) in links"
