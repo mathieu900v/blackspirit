@@ -16,6 +16,7 @@
     "@nuxtjs/pwa": "3.3.5",
     "@nuxtjs/sentry": "5.1.0",
     "@nuxtjs/sitemap": "2.4.0",
+    "@nuxtjs/vercel-builder": "0.22.1",
     "balance-text": "3.3.0",
     "build-url": "6.0.1",
     "core-js": "^3.19.3",
